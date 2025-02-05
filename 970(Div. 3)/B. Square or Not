@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class alpha {
+
+    public static boolean isBeautifulSquareMatrix(String s, int n) {
+        int r = (int) Math.sqrt(n);
+        if (r * r != n) return false;
+        
+        for (int i = 0; i < r; ++i) {
+            if (s.charAt(i) != '1' || s.charAt(n - r + i) != '1') {
+                return false;
+            }
+        }
+        
+        for (int i = 1; i < r - 1; ++i) {
+            if (s.charAt(i * r) != '1' || s.charAt(i * r + r - 1) != '1') {
+                return false;
+            }
+            for (int j = 1; j < r - 1; ++j) {
+                if (s.charAt(i * r + j) != '0') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        while (t-- > 0) {
+            int n = scanner.nextInt();
+            String s = scanner.next();
+            if (isBeautifulSquareMatrix(s, n)) {
+                System.out.println("Yes");
+            } else {
+                System.out.println("No");
+            }
+        }
+        scanner.close();
+    }
+}
