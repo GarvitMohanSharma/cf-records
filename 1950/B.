@@ -1,0 +1,51 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Alpha {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t>0){
+            int n=sc.nextInt();
+            int col = 0;
+            int row = 0;
+            int colSize = n*2;
+            int rowSize = n*2;
+            char arr[][] = new char [rowSize][colSize];
+            char turn = '#';
+            while(row<rowSize){
+                char start = turn;
+                while(col<colSize){
+                    if(start=='#'){
+                        arr[row][col] = '#';
+                        arr[row][col+1] = '#';
+                        arr[row+1][col] = '#';
+                        arr[row+1][col+1] = '#';
+                        start = '.';
+                    }else{
+                        arr[row][col] = '.';
+                        arr[row][col+1] = '.';
+                        arr[row+1][col] = '.';
+                        arr[row+1][col+1] = '.';
+                        start = '#';
+                    }
+                    col+=2;
+                }
+                if(turn=='#')
+                    turn='.';
+                else
+                    turn = '#';
+                row+=2;
+                col = 0;
+            }
+            for(int i=0;i<arr.length;i++){
+                for(int j=0;j<arr[0].length;j++){
+                    System.out.print(arr[i][j]);
+                }
+                System.out.println();
+            }
+            t--;
+        }
+    }
+}
