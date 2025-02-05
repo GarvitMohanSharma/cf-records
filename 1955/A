@@ -1,0 +1,28 @@
+import java.util.*;
+import java.io.*;
+
+public class alpha {
+	public static void main (String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		for (int i=1;i<=t;i++)
+		{
+		   int n=sc.nextInt();
+		   int a=sc.nextInt();
+		   int b=sc.nextInt();
+		   if((2*a)<b)
+		   {
+		       System.out.println(n*a);
+		   }
+		   else{
+		       if(n%2==0)
+		       {
+		           System.out.println(b*(n/2));
+		       }
+		       else{
+		            System.out.println(b*(n/2)+a);
+		       }
+		   }
+		}sc.close();
+	}
+}
