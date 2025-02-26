@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+public class alpha {
+	public static void main (String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		for (int i=1;i<=t;i++)
+		{
+		    int c=0;int d=0;
+		    int l=sc.nextInt();
+		    int r=sc.nextInt();
+		    while(l<=r)
+		    {
+		        c++;
+		        d++;
+		        l=l+d;
+		    }
+		    System.out.println(c);
+		}
+	}
+}
