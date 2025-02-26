@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class Alpha {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int t = sc.nextInt();
+
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            long[] a = new long[n];
+
+            long even = 0, odd = 0;
+            for (int i = 0; i < n; i++) {
+                a[i] = sc.nextLong();
+                if (i % 2 == 0) {
+                    even += a[i];
+                } else {
+                    odd += a[i];
+                }
+            }
+
+            long tar = (even + odd) / n;
+
+            if ((even + odd) % n != 0) {
+                System.out.println("NO");
+                continue;
+            }
+
+            long reqE = tar * ((n + 1) / 2);
+            long reqO = tar * (n / 2);
+
+            if (even == reqE && odd == reqO) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+
+        sc.close();
+    }
+}
