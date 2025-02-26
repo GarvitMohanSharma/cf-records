@@ -1,0 +1,30 @@
+import java.util.*;
+public class alpha {
+  public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    int t=sc.nextInt();
+    while(t-->0){
+      int n = sc.nextInt();
+            int m = sc.nextInt();
+
+            String[] words = new String[n];
+            for (int i = 0; i < n; i++) {
+                words[i] = sc.next();
+            }
+
+            int currentLength = 0;
+            int maxWords = 0;
+
+            for (int i = 0; i < n; i++) {
+                if (currentLength + words[i].length() <= m) {
+                    currentLength += words[i].length();
+                    maxWords++;
+                } else {
+                    break;
+                }
+            }
+
+            System.out.println(maxWords);
+    }
+  }
+}
