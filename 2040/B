@@ -1,0 +1,26 @@
+import java.util.*;
+public class alpha{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0){
+            int n=sc.nextInt();
+            if(n==1){
+                System.out.println(n);
+            }
+            else{
+                int i=1;int m=3;int c=1;
+               while(true) {
+                   i+=m;
+                   c++;
+                   m*=2;
+                   if(n<=i){
+                       System.out.println(c);
+                       break;
+                   }
+               }
+            }
+        }
+        sc.close();
+    }
+}
